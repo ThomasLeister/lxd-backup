@@ -56,7 +56,7 @@ def mountSnapshots():
         # Mount snapshot
         print("    ... mounting filesystem for container", container.name)
 
-        try: storagePool = container.devices['root']['pool']
+        try: storagePool = container.expanded_devices['root']['pool']
         except: storagePool = 'default'
 
         subprocess.run("mkdir -p /mnt/backup/{container} && mount -t zfs {pool}/containers/{container}@snapshot-resticsnap /mnt/backup/{container}".format(container=container.name, pool=storagePool), shell=True, capture_output=True, check=True)
