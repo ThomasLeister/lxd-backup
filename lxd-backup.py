@@ -73,7 +73,7 @@ def unmountSnapshots():
 # Run Restic to back up files in mounted ZFS snapshots
 def runRestic():
     print("Running restic on /mnt/backup/")
-    subprocess.run("restic backup /mnt/backup /root /opt/backup", shell=True, check=True)
+    subprocess.run("restic backup /mnt/backup /root /opt/backup /var/snap/lxd/common/lxd", shell=True, check=True)
 
 
 # Forget old backups
