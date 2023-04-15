@@ -12,7 +12,7 @@ from pathlib import Path
 os.environ["PYLXD_WARNINGS"] = "none"
 
 # load restic environment
-envPath = Path(os.path.join(sys.path[0], 'resticenv.sh'))
+envPath = Path(os.path.join(sys.path[0], '/opt/backup/resticenv.sh'))
 load_dotenv(dotenv_path=envPath)
 
 # Get all the containers from LXD
